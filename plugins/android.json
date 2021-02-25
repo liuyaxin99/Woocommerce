@@ -1,0 +1,40 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "com.paypal.cordova.mobilesdk": {
+            "PACKAGE_NAME": "com.ionicframework.majorproject665694"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.ionicframework.majorproject665694"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ionicframework.majorproject665694"
+        },
+        "cordova-plugin-ionic-webview": {
+            "PACKAGE_NAME": "com.ionicframework.majorproject665694"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.ionicframework.majorproject665694"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.ionicframework.majorproject665694"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ionicframework.majorproject665694"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.ionicframework.majorproject665694"
+        }
+    },
+    "dependent_plugins": {
+        "card.io.cordova.mobilesdk": {
+            "PACKAGE_NAME": "com.ionicframework.majorproject665694"
+        }
+    }
+}

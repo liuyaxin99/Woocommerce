@@ -1,0 +1,62 @@
+<ion-header >
+  <ion-navbar  color="danger">
+    <button ion-button menuToggle>
+      <ion-icon color="light" name="menu"></ion-icon>
+    </button>
+    <ion-title *ngIf="!isSearchbarOpened">Home</ion-title>
+    <ion-searchbar *ngIf="isSearchbarOpened" showCancelButton="true" (ionCancel)="isSearchbarOpened=false" [(ngModel)]="searchQuery" (search)="onSearch($event)"></ion-searchbar>
+    <ion-buttons end>
+      <button ion-fab color="danger"  *ngIf="!isSearchbarOpened" (click)="isSearchbarOpened=true">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-fab  color="danger" (click)="openCart()">
+        <ion-icon name="cart"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+
+<ion-grid>
+  <ion-row>
+    <ion-slides #productSlides>
+      <ion-slide *ngFor="let product of products">
+        <ion-card no-padding>
+          <img [src]="product.featured_src"/>
+          <h1 padding center>{{ product.title }}</h1>
+          <p center padding [innerHTML]="product.short_description"></p>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </ion-row>
+</ion-grid>
+ 
+
+<ion-grid>
+  <ion-item > 
+    <ion-row>
+      <ion-col col-6 *ngFor="let product of moreProducts" text-wrap (click)="openProductPage(product)">
+        <ion-card>
+          <img [src]="product.featured_src"/>
+
+        <ion-card-content>
+          <ion-card-title>
+           <h2> {{ product.title }}</h2>
+           <p><span [innerHTML]="product.price_html"></span></p>
+          </ion-card-title>
+        </ion-card-content>
+      </ion-card>
+    
+      </ion-col>
+    </ion-row>
+  </ion-item>
+</ion-grid>
+
+
+<ion-infinite-scroll (ionInfinite)="loadMoreProducts($event)">
+  <ion-infinite-scroll-content></ion-infinite-scroll-content>
+</ion-infinite-scroll>
+</ion-content>
